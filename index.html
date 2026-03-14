@@ -1,165 +1,652 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Gomes | Criação de Sites Profissionais</title>
+  <meta name="description" content="Sites profissionais, landing pages, catálogos digitais e páginas para empresas que querem atrair mais clientes e fortalecer sua presença online.">
 
-<title>Criação de Site Profissional</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-<style>
+    html{
+      scroll-behavior:smooth;
+    }
 
-body{
-font-family: Arial;
-margin:0;
-background:#0f172a;
-color:white;
-text-align:center;
-}
+    body{
+      background:#081120;
+      color:#ffffff;
+      line-height:1.6;
+    }
 
-header{
-padding:60px 20px;
-background:linear-gradient(135deg,#2563eb,#1e3a8a);
-}
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
 
-h1{
-font-size:32px;
-margin-bottom:10px;
-}
+    .container{
+      width:100%;
+      max-width:1150px;
+      margin:0 auto;
+      padding:0 20px;
+    }
 
-.container{
-padding:30px 20px;
-max-width:900px;
-margin:auto;
-}
+    .hero{
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,0.35), transparent 35%),
+        radial-gradient(circle at top right, rgba(34,197,94,0.12), transparent 30%),
+        linear-gradient(135deg, #0b1730 0%, #0f274f 45%, #081120 100%);
+      padding:80px 0 70px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
 
-.card{
-background:#1e293b;
-padding:25px;
-border-radius:10px;
-margin:20px 0;
-}
+    .hero-content{
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:35px;
+      align-items:center;
+    }
 
-button{
-padding:15px 25px;
-border:none;
-border-radius:8px;
-font-size:16px;
-cursor:pointer;
-margin:10px;
-}
+    .tag{
+      display:inline-block;
+      background:rgba(59,130,246,0.14);
+      color:#7db2ff;
+      border:1px solid rgba(125,178,255,0.2);
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:14px;
+      margin-bottom:18px;
+    }
 
-.whatsapp{
-background:#22c55e;
-color:white;
-}
+    .hero h1{
+      font-size:48px;
+      line-height:1.15;
+      margin-bottom:18px;
+    }
 
-.portfolio{
-background:#2563eb;
-color:white;
-}
+    .hero p{
+      font-size:18px;
+      color:#c8d4e8;
+      max-width:650px;
+      margin-bottom:28px;
+    }
 
-.email{
-background:#f59e0b;
-color:white;
-}
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:26px;
+    }
 
-.price{
-font-size:28px;
-margin:20px 0;
-color:#22c55e;
-}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 22px;
+      border-radius:12px;
+      font-weight:bold;
+      transition:.25s ease;
+      border:1px solid transparent;
+      min-width:170px;
+    }
 
-footer{
-padding:30px;
-background:#020617;
-margin-top:40px;
-}
+    .btn-primary{
+      background:#2563eb;
+      color:white;
+      box-shadow:0 12px 24px rgba(37,99,235,0.25);
+    }
 
-</style>
+    .btn-primary:hover{
+      background:#1d4ed8;
+      transform:translateY(-2px);
+    }
 
+    .btn-secondary{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.16);
+      color:#fff;
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,0.05);
+      transform:translateY(-2px);
+    }
+
+    .hero-mini{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .mini-pill{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      color:#d7e2f4;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:14px;
+    }
+
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 18px 40px rgba(0,0,0,0.25);
+    }
+
+    .mock-window{
+      background:#0a1325;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:18px;
+      overflow:hidden;
+    }
+
+    .mock-top{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 14px;
+      background:#0d1a31;
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#334155;
+    }
+
+    .mock-body{
+      padding:22px;
+      display:grid;
+      gap:14px;
+    }
+
+    .mock-line{
+      height:14px;
+      border-radius:8px;
+      background:linear-gradient(90deg, rgba(37,99,235,0.75), rgba(37,99,235,0.15));
+    }
+
+    .mock-line.small{ width:45%; }
+    .mock-line.medium{ width:70%; }
+    .mock-line.large{ width:100%; }
+
+    .mock-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:8px;
+    }
+
+    .mock-box{
+      height:90px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:16px;
+    }
+
+    section{
+      padding:78px 0;
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:42px;
+    }
+
+    .section-head h2{
+      font-size:36px;
+      margin-bottom:12px;
+    }
+
+    .section-head p{
+      max-width:720px;
+      margin:0 auto;
+      color:#b8c4d8;
+      font-size:17px;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:#0e1a31;
+      border:1px solid rgba(255,255,255,0.07);
+      border-radius:22px;
+      padding:26px;
+      box-shadow:0 14px 34px rgba(0,0,0,0.18);
+    }
+
+    .card h3{
+      font-size:22px;
+      margin-bottom:12px;
+    }
+
+    .card p{
+      color:#b8c4d8;
+      font-size:15px;
+    }
+
+    .card-icon{
+      width:52px;
+      height:52px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      margin-bottom:18px;
+      background:linear-gradient(135deg, #2563eb, #1e40af);
+      box-shadow:0 10px 25px rgba(37,99,235,0.22);
+    }
+
+    .benefits{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
+    }
+
+    .benefit{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      background:#0e1a31;
+      border:1px solid rgba(255,255,255,0.07);
+      border-radius:18px;
+      padding:22px;
+    }
+
+    .check{
+      flex-shrink:0;
+      width:34px;
+      height:34px;
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(34,197,94,0.15);
+      color:#4ade80;
+      font-weight:bold;
+    }
+
+    .benefit h4{
+      margin-bottom:6px;
+      font-size:18px;
+    }
+
+    .benefit p{
+      color:#b8c4d8;
+      font-size:15px;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .step{
+      position:relative;
+      background:#0e1a31;
+      border:1px solid rgba(255,255,255,0.07);
+      border-radius:22px;
+      padding:24px;
+    }
+
+    .step-number{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:#2563eb;
+      font-weight:bold;
+      margin-bottom:16px;
+    }
+
+    .step h3{
+      margin-bottom:10px;
+      font-size:21px;
+    }
+
+    .step p{
+      color:#b8c4d8;
+      font-size:15px;
+    }
+
+    .cta{
+      background:
+        radial-gradient(circle at left, rgba(37,99,235,0.25), transparent 35%),
+        linear-gradient(135deg,#0f1d36,#0c1528);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:28px;
+      padding:42px 28px;
+      text-align:center;
+      box-shadow:0 18px 40px rgba(0,0,0,0.22);
+    }
+
+    .cta h2{
+      font-size:34px;
+      margin-bottom:12px;
+    }
+
+    .cta p{
+      max-width:720px;
+      margin:0 auto 24px;
+      color:#c7d3e7;
+      font-size:17px;
+    }
+
+    .cta-buttons{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+
+    footer{
+      padding:30px 0 50px;
+      text-align:center;
+      color:#9fb0ca;
+      border-top:1px solid rgba(255,255,255,0.06);
+      margin-top:15px;
+    }
+
+    .footer-links{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:18px;
+    }
+
+    .footer-links a{
+      color:#d5e2f7;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.06);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:14px;
+    }
+
+    .floating-whatsapp{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      background:#22c55e;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      box-shadow:0 18px 30px rgba(34,197,94,0.3);
+      z-index:999;
+    }
+
+    @media (max-width: 920px){
+      .hero-content{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .section-head h2{
+        font-size:30px;
+      }
+
+      .cta h2{
+        font-size:28px;
+      }
+    }
+
+    @media (max-width: 520px){
+      .hero{
+        padding:64px 0 56px;
+      }
+
+      .hero h1{
+        font-size:32px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .cta-buttons .btn{
+        width:100%;
+      }
+
+      .section-head h2{
+        font-size:26px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
+  <header class="hero">
+    <div class="container hero-content">
+      <div>
+        <span class="tag">Sites Profissionais para Empresas</span>
+        <h1>Transforme sua presença digital com um site que passa confiança e gera contatos</h1>
+        <p>
+          Desenvolvo sites profissionais, landing pages e páginas comerciais para negócios que querem se apresentar melhor, atrair mais clientes e facilitar o contato pelo celular.
+        </p>
 
-<h1>Criação de Site Profissional</h1>
+        <div class="hero-buttons">
+          <a href="https://wa.me/5562994385558" target="_blank" class="btn btn-primary">Falar no WhatsApp</a>
+          <a href="https://thcompany011-crypto.github.io/Portfolio/" target="_blank" class="btn btn-secondary">Ver Portfólio</a>
+        </div>
 
-<p>Sites modernos para empresas que querem atrair mais clientes</p>
+        <div class="hero-mini">
+          <span class="mini-pill">Sites responsivos</span>
+          <span class="mini-pill">Layout profissional</span>
+          <span class="mini-pill">Contato rápido</span>
+        </div>
+      </div>
 
-</header>
+      <div class="hero-card">
+        <div class="mock-window">
+          <div class="mock-top">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="mock-body">
+            <div class="mock-line small"></div>
+            <div class="mock-line medium"></div>
+            <div class="mock-line large"></div>
+            <div class="mock-grid">
+              <div class="mock-box"></div>
+              <div class="mock-box"></div>
+              <div class="mock-box"></div>
+              <div class="mock-box"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<div class="container">
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Soluções para diferentes tipos de negócios</h2>
+        <p>
+          A estrutura pode ser adaptada para lojas, restaurantes, clínicas, assistências técnicas, empresas de serviços, estética, imobiliárias, advogados, higienização e muitos outros segmentos.
+        </p>
+      </div>
 
-<div class="card">
+      <div class="services">
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <h3>Site Institucional</h3>
+          <p>Ideal para empresas que querem apresentar seus serviços com mais profissionalismo e transmitir credibilidade online.</p>
+        </div>
 
-<h2>O que você recebe</h2>
+        <div class="card">
+          <div class="card-icon">📲</div>
+          <h3>Landing Page</h3>
+          <p>Páginas diretas, objetivas e focadas em conversão para campanhas, promoções, captação de contatos e vendas.</p>
+        </div>
 
-<p>✔ Site profissional para sua empresa</p>
-<p>✔ Botão direto para WhatsApp</p>
-<p>✔ Página otimizada para celular</p>
-<p>✔ Apresentação dos serviços</p>
-<p>✔ Sessão de fotos e resultados</p>
+        <div class="card">
+          <div class="card-icon">🛍️</div>
+          <h3>Catálogo Digital</h3>
+          <p>Perfeito para quem quer mostrar produtos, serviços, cardápios ou portfólio de forma organizada e acessível.</p>
+        </div>
 
-</div>
+        <div class="card">
+          <div class="card-icon">💬</div>
+          <h3>Contato Facilitado</h3>
+          <p>Integração com WhatsApp, email e links estratégicos para facilitar o atendimento e aumentar as chances de contato.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>O que o seu negócio ganha com isso</h2>
+        <p>
+          Um site não é apenas uma página bonita. Ele ajuda sua empresa a ser levada mais a sério e facilita o caminho entre interesse e contato.
+        </p>
+      </div>
 
-<h2>Investimento</h2>
+      <div class="benefits">
+        <div class="benefit">
+          <div class="check">✓</div>
+          <div>
+            <h4>Mais profissionalismo</h4>
+            <p>Apresente sua empresa de forma organizada, moderna e com uma imagem muito mais forte para o cliente.</p>
+          </div>
+        </div>
 
-<div class="price">
-R$397
-</div>
+        <div class="benefit">
+          <div class="check">✓</div>
+          <div>
+            <h4>Mais confiança</h4>
+            <p>Quando a empresa tem presença digital bem feita, o cliente sente mais segurança para entrar em contato.</p>
+          </div>
+        </div>
 
-<p>Pagamento único para criação do site</p>
+        <div class="benefit">
+          <div class="check">✓</div>
+          <div>
+            <h4>Mais praticidade</h4>
+            <p>Informações importantes, botões de contato e apresentação dos serviços em um só lugar.</p>
+          </div>
+        </div>
 
-<p>Hospedagem e manutenção: R$39/mês</p>
+        <div class="benefit">
+          <div class="check">✓</div>
+          <div>
+            <h4>Melhor experiência no celular</h4>
+            <p>O layout é pensado para funcionar bem no smartphone, que é onde a maioria dos clientes acessa.</p>
+          </div>
+        </div>
 
-</div>
+        <div class="benefit">
+          <div class="check">✓</div>
+          <div>
+            <h4>Estrutura adaptável</h4>
+            <p>Cada projeto pode ser personalizado com logo, fotos reais, cores da marca e informações da empresa.</p>
+          </div>
+        </div>
 
-<div class="card">
+        <div class="benefit">
+          <div class="check">✓</div>
+          <div>
+            <h4>Contato mais rápido</h4>
+            <p>O cliente encontra o que precisa e pode chamar no WhatsApp ou enviar email com muito mais facilidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h2>Conheça meus projetos</h2>
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Como funciona o processo</h2>
+        <p>
+          Um processo simples, direto e pensado para facilitar tanto para você quanto para o cliente.
+        </p>
+      </div>
 
-<a href="https://thcompany011-crypto.github.io/Portfolio/" target="_blank">
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Entendimento do negócio</h3>
+          <p>Primeiro entendemos o tipo de empresa, os objetivos da página e o que precisa ser apresentado.</p>
+        </div>
 
-<button class="portfolio">
-Ver Portfólio
-</button>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Estrutura e personalização</h3>
+          <p>Montagem da página com identidade visual, serviços, imagens, botões de contato e seções estratégicas.</p>
+        </div>
 
-</a>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Entrega e publicação</h3>
+          <p>Depois da aprovação, o site pode ser colocado no ar para a empresa começar a divulgar e receber contatos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <section>
+    <div class="container">
+      <div class="cta">
+        <h2>Quer apresentar seu negócio de forma mais profissional?</h2>
+        <p>
+          Se você deseja um site profissional, uma landing page ou um catálogo digital para o seu negócio, entre em contato e veja como seu projeto pode ser estruturado.
+        </p>
 
-<div class="card">
+        <div class="cta-buttons">
+          <a href="https://wa.me/5562994385558" target="_blank" class="btn btn-primary">Solicitar atendimento</a>
+          <a href="mailto:alexth0011@gmail.com" class="btn btn-secondary">Enviar email</a>
+          <a href="https://thcompany011-crypto.github.io/Portfolio/" target="_blank" class="btn btn-secondary">Acessar portfólio</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h2>Fale comigo</h2>
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="https://wa.me/5562994385558" target="_blank">WhatsApp</a>
+        <a href="mailto:alexth0011@gmail.com">Email</a>
+        <a href="https://thcompany011-crypto.github.io/Portfolio/" target="_blank">Portfólio</a>
+      </div>
+      <p>Alex Gomes — Web Developer</p>
+    </div>
+  </footer>
 
-<a href="https://wa.me/5562994385558">
-
-<button class="whatsapp">
-Falar no WhatsApp
-</button>
-
-</a>
-
-<a href="mailto:alexth0011@gmail.com">
-
-<button class="email">
-Enviar Email
-</button>
-
-</a>
-
-</div>
-
-</div>
-
-<footer>
-
-<p>Alex Gomes — Web Developer</p>
-
-</footer>
+  <a class="floating-whatsapp" href="https://wa.me/5562994385558" target="_blank">💬</a>
 
 </body>
 </html>
